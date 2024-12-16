@@ -755,7 +755,7 @@ async function run() {
                 }
 
                 // Create a live link
-                const liveLink = `https://portfolioz-server.onrender.com/portfolio/${email}`;
+                const liveLink = `https://portfolio-z-chi.vercel.app/portfolio/${email}`;
 
                 // Log live link creation
                 console.log("Live link created:", liveLink);
