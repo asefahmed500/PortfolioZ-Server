@@ -720,9 +720,10 @@ async function run() {
 
         // POST API: Publish Portfolio
 
-        app.post("/api/publishPortfolio", verifyToken, async (req, res) => {
+        app.post("/publishPortfolio", async (req, res) => {
             try {
                 const { email, portfolioData } = req.body;
+                console.log("Request received:", req.body);
 
                 // Log incoming request data
                 console.log("Received Request:", { email, portfolioData });
@@ -754,7 +755,7 @@ async function run() {
                 }
 
                 // Create a live link
-                const liveLink = `http://localhost:5173/portfolio/${email}`;
+                const liveLink = `https://portfolioz-server.onrender.com/portfolio/${email}`;
 
                 // Log live link creation
                 console.log("Live link created:", liveLink);
@@ -780,7 +781,7 @@ async function run() {
         });
 
         // GET API: Serve Portfolio by Email
-        app.get("/portfolio/:email", async (req, res) => {
+        app.get("/publishPortfolio/:email",  async (req, res) => {
             try {
                 const { email } = req.params;
 
